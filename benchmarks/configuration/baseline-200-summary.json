@@ -1,0 +1,38 @@
+{
+  "control": {
+    "samples": 12,
+    "median_ms": 1316.0,
+    "min_ms": 911.0,
+    "max_ms": 1595.0,
+    "q1_ms": 1234.25,
+    "q3_ms": 1401.0,
+    "mean_ms": 1295.9166666666667,
+    "stdev_ms": 198.88894038146165,
+    "delta_vs_control_ms": 0.0,
+    "delta_vs_control_percent": 0.0
+  },
+  "shared-contract": {
+    "samples": 12,
+    "median_ms": 1157.5,
+    "min_ms": 803.0,
+    "max_ms": 1392.0,
+    "q1_ms": 1036.75,
+    "q3_ms": 1227.75,
+    "mean_ms": 1134.25,
+    "stdev_ms": 164.3616439440784,
+    "delta_vs_control_ms": -158.5,
+    "delta_vs_control_percent": -12.044072948328266
+  },
+  "per-feature-contract": {
+    "samples": 12,
+    "median_ms": 2314.5,
+    "min_ms": 1925.0,
+    "max_ms": 2827.0,
+    "q1_ms": 2148.5,
+    "q3_ms": 2490.0,
+    "mean_ms": 2331.5833333333335,
+    "stdev_ms": 271.3931928982655,
+    "delta_vs_control_ms": 998.5,
+    "delta_vs_control_percent": 75.8738601823708
+  }
+}
