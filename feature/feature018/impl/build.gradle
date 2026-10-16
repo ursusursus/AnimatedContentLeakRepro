@@ -10,7 +10,7 @@ android {
         targetCompatibility JavaVersion.VERSION_17
     }
 }
-kotlin { jvmToolchain(17) }
+kotlin { compilerOptions { jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17 } }
 dependencies {
     implementation project(':feature:feature018:contract')
     implementation project(':feature:feature019:contract')

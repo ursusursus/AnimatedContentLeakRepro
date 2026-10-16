@@ -26,8 +26,7 @@ Branches:
 ## Validation (not benchmarks)
 
 Use JDK 17+ compatible with the wrapper/AGP and install Android SDK 37.
-The Kotlin toolchain requests JDK 17; have it installed locally or configure
-Gradle toolchain discovery. Configure your SDK using ANDROID_HOME or
+Java and Kotlin target JVM 17 using the JDK running Gradle. Configure your SDK using ANDROID_HOME or
 local.properties, and use the checked-in wrapper.
 
 ```sh
@@ -39,3 +38,7 @@ No timing runs have been performed. Do not interpret validation build duration
 as a configuration benchmark. A later benchmark should warm dependencies and
 script caches, alternate branch order, measure repeated configuration without
 configuration cache, and separately measure configuration-cache reuse.
+
+Validation: `./gradlew :app:assembleDebug --max-workers=2` passed with
+Gradle 9.8.1, AGP 9.4.1, Kotlin 2.4.21, SDK 37, and JDK 25.
+No benchmarks were run.
