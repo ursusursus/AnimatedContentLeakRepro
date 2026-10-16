@@ -19,9 +19,9 @@ import shutil
 import subprocess
 
 BRANCHES = {
-    'control': 'experiment/navigation-control',
-    'shared-contract': 'experiment/navigation-shared-contract',
-    'per-feature-contract': 'experiment/navigation-per-feature-contract',
+    'control': 'experiment/navigation-600-control',
+    'shared-contract': 'experiment/navigation-600-shared-contract',
+    'per-feature-contract': 'experiment/navigation-600-per-feature-contract',
 }
 FLAGS = ['help', '--dry-run', '--no-configuration-cache',
          '--no-configure-on-demand', '--no-parallel', '--max-workers=2',
