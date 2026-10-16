@@ -1,0 +1,132 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.compose)
+}
+android {
+    namespace 'com.example.animatedcontentleak'
+    compileSdk 37
+    defaultConfig {
+        applicationId 'com.example.animatedcontentleak'
+        minSdk 24
+        targetSdk 37
+        versionCode 1
+        versionName '1.0'
+    }
+    buildTypes { release { minifyEnabled false } }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    buildFeatures { compose true }
+}
+dependencies {
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.lifecycle.runtime.ktx
+    implementation libs.androidx.activity.compose
+    implementation platform(libs.androidx.compose.bom)
+    implementation libs.androidx.compose.ui
+    implementation libs.androidx.compose.ui.tooling.preview
+    implementation libs.androidx.compose.animation
+    implementation libs.androidx.compose.material3
+    debugImplementation libs.androidx.compose.ui.tooling
+    implementation project(':feature:feature001:impl')
+    implementation project(':feature:feature002:impl')
+    implementation project(':feature:feature003:impl')
+    implementation project(':feature:feature004:impl')
+    implementation project(':feature:feature005:impl')
+    implementation project(':feature:feature006:impl')
+    implementation project(':feature:feature007:impl')
+    implementation project(':feature:feature008:impl')
+    implementation project(':feature:feature009:impl')
+    implementation project(':feature:feature010:impl')
+    implementation project(':feature:feature011:impl')
+    implementation project(':feature:feature012:impl')
+    implementation project(':feature:feature013:impl')
+    implementation project(':feature:feature014:impl')
+    implementation project(':feature:feature015:impl')
+    implementation project(':feature:feature016:impl')
+    implementation project(':feature:feature017:impl')
+    implementation project(':feature:feature018:impl')
+    implementation project(':feature:feature019:impl')
+    implementation project(':feature:feature020:impl')
+    implementation project(':feature:feature021:impl')
+    implementation project(':feature:feature022:impl')
+    implementation project(':feature:feature023:impl')
+    implementation project(':feature:feature024:impl')
+    implementation project(':feature:feature025:impl')
+    implementation project(':feature:feature026:impl')
+    implementation project(':feature:feature027:impl')
+    implementation project(':feature:feature028:impl')
+    implementation project(':feature:feature029:impl')
+    implementation project(':feature:feature030:impl')
+    implementation project(':feature:feature031:impl')
+    implementation project(':feature:feature032:impl')
+    implementation project(':feature:feature033:impl')
+    implementation project(':feature:feature034:impl')
+    implementation project(':feature:feature035:impl')
+    implementation project(':feature:feature036:impl')
+    implementation project(':feature:feature037:impl')
+    implementation project(':feature:feature038:impl')
+    implementation project(':feature:feature039:impl')
+    implementation project(':feature:feature040:impl')
+    implementation project(':feature:feature041:impl')
+    implementation project(':feature:feature042:impl')
+    implementation project(':feature:feature043:impl')
+    implementation project(':feature:feature044:impl')
+    implementation project(':feature:feature045:impl')
+    implementation project(':feature:feature046:impl')
+    implementation project(':feature:feature047:impl')
+    implementation project(':feature:feature048:impl')
+    implementation project(':feature:feature049:impl')
+    implementation project(':feature:feature050:impl')
+    implementation project(':feature:feature051:impl')
+    implementation project(':feature:feature052:impl')
+    implementation project(':feature:feature053:impl')
+    implementation project(':feature:feature054:impl')
+    implementation project(':feature:feature055:impl')
+    implementation project(':feature:feature056:impl')
+    implementation project(':feature:feature057:impl')
+    implementation project(':feature:feature058:impl')
+    implementation project(':feature:feature059:impl')
+    implementation project(':feature:feature060:impl')
+    implementation project(':feature:feature061:impl')
+    implementation project(':feature:feature062:impl')
+    implementation project(':feature:feature063:impl')
+    implementation project(':feature:feature064:impl')
+    implementation project(':feature:feature065:impl')
+    implementation project(':feature:feature066:impl')
+    implementation project(':feature:feature067:impl')
+    implementation project(':feature:feature068:impl')
+    implementation project(':feature:feature069:impl')
+    implementation project(':feature:feature070:impl')
+    implementation project(':feature:feature071:impl')
+    implementation project(':feature:feature072:impl')
+    implementation project(':feature:feature073:impl')
+    implementation project(':feature:feature074:impl')
+    implementation project(':feature:feature075:impl')
+    implementation project(':feature:feature076:impl')
+    implementation project(':feature:feature077:impl')
+    implementation project(':feature:feature078:impl')
+    implementation project(':feature:feature079:impl')
+    implementation project(':feature:feature080:impl')
+    implementation project(':feature:feature081:impl')
+    implementation project(':feature:feature082:impl')
+    implementation project(':feature:feature083:impl')
+    implementation project(':feature:feature084:impl')
+    implementation project(':feature:feature085:impl')
+    implementation project(':feature:feature086:impl')
+    implementation project(':feature:feature087:impl')
+    implementation project(':feature:feature088:impl')
+    implementation project(':feature:feature089:impl')
+    implementation project(':feature:feature090:impl')
+    implementation project(':feature:feature091:impl')
+    implementation project(':feature:feature092:impl')
+    implementation project(':feature:feature093:impl')
+    implementation project(':feature:feature094:impl')
+    implementation project(':feature:feature095:impl')
+    implementation project(':feature:feature096:impl')
+    implementation project(':feature:feature097:impl')
+    implementation project(':feature:feature098:impl')
+    implementation project(':feature:feature099:impl')
+    implementation project(':feature:feature100:impl')
+}

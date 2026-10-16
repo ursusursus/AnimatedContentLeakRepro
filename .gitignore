@@ -7,3 +7,6 @@
 /app/build
 /captures
 .kotlin
+
+# Generated outputs of all experiment modules
+**/build/
