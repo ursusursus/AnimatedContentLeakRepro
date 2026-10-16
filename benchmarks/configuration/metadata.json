@@ -1,0 +1,37 @@
+{
+  "started_utc": "2026-10-16T19:58:47.397939+00:00",
+  "revisions": {
+    "control": "b70e9f18f4a155b4f7e2a5876fe0c984b83fb6d1",
+    "shared-contract": "64691a5078c09ccce66cfd72df7bee2b36df9677",
+    "per-feature-contract": "0239aa4bbc865399e7715d7d62e6f552fecb80b8"
+  },
+  "branches": {
+    "control": "experiment/navigation-600-control",
+    "shared-contract": "experiment/navigation-600-shared-contract",
+    "per-feature-contract": "experiment/navigation-600-per-feature-contract"
+  },
+  "command": [
+    "./gradlew",
+    "help",
+    "--dry-run",
+    "--no-configuration-cache",
+    "--no-configure-on-demand",
+    "--no-parallel",
+    "--max-workers=2",
+    "--offline",
+    "--profile",
+    "--console=plain"
+  ],
+  "warmups_per_layout": 6,
+  "samples_per_layout": 12,
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "logical_cpus": 3,
+  "cpu_affinity_count": 3,
+  "gradle_version_output": "------------------------------------------------------------\nGradle 9.8.1\n------------------------------------------------------------\n\nBuild time:    2026-10-07 16:57:46 UTC\nRevision:      39daf39feb60a18b1b6ddccde53366522fef516f\n\nKotlin:        2.4.10\nGroovy:        4.0.33\nAnt:           Apache Ant(TM) version 1.10.17 compiled on April 6 2026\nLauncher JVM:  25.0.4.1 (Oracle Corporation 25.0.4.1+1-LTS-5)\nDaemon JVM:    Compatible with Java 25, any vendor, nativeImageCapable=false (from gradle/gradle-daemon-jvm.properties)\nOS:            Linux 6.18.44 amd64",
+  "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+  "cgroup_cpu_max": "200000 100000",
+  "cgroup_memory_max": "8589934592",
+  "gradle_heap_mib": 2048,
+  "measured_daemon_restarts": 0,
+  "task_execution_zero_in_all_54_profiles": true
+}
