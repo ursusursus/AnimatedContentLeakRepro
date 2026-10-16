@@ -13,4 +13,5 @@ android {
 kotlin { compilerOptions { jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17 } }
 dependencies {
     implementation project(':feature:feature100:contract')
+    implementation project(':feature:feature101:contract')
 }
