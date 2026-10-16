@@ -23,20 +23,22 @@ Branches:
 - experiment/navigation-600-shared-contract: 600 features + 1 shared contract
 - experiment/navigation-600-per-feature-contract: 600 features + 600 contracts
 
-## Validation (not benchmarks)
+## Validation
 
-Use JDK 17+ compatible with the wrapper/AGP and install Android SDK 37.
-Java and Kotlin target JVM 17 using the JDK running Gradle. Configure your SDK using ANDROID_HOME or
-local.properties, and use the checked-in wrapper.
+All three 600-feature layouts passed full app assembly using:
 
 ```sh
-./gradlew projects
-./gradlew :app:assembleDebug
+./gradlew :app:assembleDebug --console=plain --max-workers=2 \
+  '-Dorg.gradle.jvmargs=-Xmx4096m -Dfile.encoding=UTF-8' \
+  '-Pkotlin.daemon.jvmargs=-Xmx1024m'
 ```
 
-No timing runs have been performed. Do not interpret validation build duration
-as a configuration benchmark. A later benchmark should warm dependencies and
-script caches, alternate branch order, measure repeated configuration without
-configuration cache, and separately measure configuration-cache reuse.
+The initial full per-feature-contract build failed with Java heap space at the
+original 2 GiB Gradle heap. The validated command uses a 4 GiB Gradle heap and a
+1 GiB Kotlin compiler heap. These are compilation-validation overrides only.
+The checked-in Gradle heap remains 2 GiB for the configuration benchmark,
+matching the earlier 100- and 200-feature tests. A separate configuration-only
+pilot succeeded at 2 GiB. Validation durations are not configuration results.
 
-Validation and configuration measurements are recorded in benchmarks/configuration.
+Use an AGP-compatible JDK and Android SDK 37. Java and Kotlin target JVM 17.
+Configuration-only measurements are recorded in benchmarks/configuration.

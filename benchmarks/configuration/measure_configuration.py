@@ -71,6 +71,15 @@ def main():
         'cpu_affinity_count': len(os.sched_getaffinity(0)),
         'gradle_version_output': command(repo, str(repo / 'gradlew'), '--version'),
     }
+    cpuinfo = Path('/proc/cpuinfo')
+    if cpuinfo.exists():
+        metadata['cpu_model'] = next((line.split(':', 1)[1].strip()
+                                     for line in cpuinfo.read_text().splitlines()
+                                     if line.startswith('model name')), 'unknown')
+    for name in ('cpu.max', 'memory.max'):
+        path = Path('/sys/fs/cgroup') / name
+        if path.exists():
+            metadata['cgroup_' + name.replace('.', '_')] = path.read_text().strip()
     (output / 'metadata.json').write_text(json.dumps(metadata, indent=2) + '\n')
     worktrees = {}
     for name, revision in revisions.items():
