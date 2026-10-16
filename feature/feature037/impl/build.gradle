@@ -11,7 +11,7 @@ android {
         targetCompatibility JavaVersion.VERSION_17
     }
 }
-kotlin { jvmToolchain(17) }
+kotlin { compilerOptions { jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17 } }
 dependencies {
     api libs.androidx.navigation3.runtime
     implementation libs.kotlinx.serialization.core
