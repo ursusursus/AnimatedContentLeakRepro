@@ -27,7 +27,9 @@ Branches:
 ## Validation
 
 All three 600-feature layouts passed full app assembly using the command below.
-The 550-feature reduction on this branch has not been re-assembled.
+The 550-feature reduction on this branch also passed the same command
+(BUILD SUCCESSFUL, 11036 tasks), with Maven Central redirected to Google's
+mirror via an init script because of HTTP 429 rate limiting.
 
 ```sh
 ./gradlew :app:assembleDebug --console=plain --max-workers=2 \
