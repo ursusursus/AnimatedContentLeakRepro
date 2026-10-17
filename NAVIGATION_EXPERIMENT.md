@@ -33,12 +33,12 @@ All three 500-feature layouts passed full app assembly using:
   '-Pkotlin.daemon.jvmargs=-Xmx1024m'
 ```
 
-The initial full per-feature-contract build failed with Java heap space at the
-original 2 GiB Gradle heap. The validated command uses a 4 GiB Gradle heap and a
-1 GiB Kotlin compiler heap. These are compilation-validation overrides only.
-The checked-in Gradle heap remains 2 GiB for the configuration benchmark,
-matching the earlier 100- and 200-feature tests. A separate configuration-only
-pilot succeeded at 2 GiB. Validation durations are not configuration results.
+The 600-feature per-feature-contract build failed with Java heap space at the
+2 GiB Gradle heap, so the 500-feature validation reused the 4 GiB Gradle heap and
+1 GiB Kotlin compiler heap overrides; a 2 GiB full build was not attempted here.
+These are compilation-validation overrides only. The checked-in Gradle heap
+remains 2 GiB for the configuration benchmark, matching the earlier tests.
+Validation durations are not configuration results.
 
 Use an AGP-compatible JDK and Android SDK 37. Java and Kotlin target JVM 17.
 Configuration-only measurements are recorded in benchmarks/configuration.
