@@ -7,3 +7,5 @@
 /app/build
 /captures
 .kotlin
+/feature/**/build
+/nav-entrypoints/build

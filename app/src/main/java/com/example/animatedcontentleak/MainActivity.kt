@@ -24,7 +24,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
 //            AppRoot() // leaks
-            AppRoot2() // doesn't leak
+//            AppRoot2() // doesn't leak
+            NavRoot()
         }
     }
 }
