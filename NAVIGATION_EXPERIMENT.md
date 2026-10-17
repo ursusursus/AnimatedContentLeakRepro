@@ -1,31 +1,31 @@
 # Navigation contract experiment: control
 
-This branch contains 600 Android feature implementation modules. The existing
-app depends on all 600, while preserving its original UI. Each feature has one
-serializable Navigation 3 key, an ownRoute function, and (except feature600) a
+This branch contains 500 Android feature implementation modules. The existing
+app depends on all 500, while preserving its original UI. Each feature has one
+serializable Navigation 3 key, an ownRoute function, and (except feature500) a
 nextRoute function referencing the following feature's key.
 
 Layout: **control**. Keys keep identical packages and contents across branches.
 The control stores keys in implementation modules; shared uses one Kotlin/JVM
-contract module; per-feature uses 600 Kotlin/JVM contract modules. Contracts use
+contract module; per-feature uses 500 Kotlin/JVM contract modules. Contracts use
 Kotlin JVM and serialization plugins, with no java-library plugin. All build and
 settings scripts use Groovy. Android modules use AGP's built-in Kotlin support.
 
-The dependency chain feature001 -> feature002 -> ... -> feature600 is acyclic
-so the control can compile. It has 599 cross-feature edges in every layout.
+The dependency chain feature001 -> feature002 -> ... -> feature500 is acyclic
+so the control can compile. It has 499 cross-feature edges in every layout.
 The control deliberately exposes implementation modules to consumers; the other
 layouts expose contracts. This difference is intrinsic to the comparison.
 Gradle also creates intermediate parent projects for the nested paths; counts
 of actual projects therefore exceed counts of modules with build scripts.
 
 Branches:
-- experiment/navigation-600-control: 600 feature modules, no contract modules
-- experiment/navigation-600-shared-contract: 600 features + 1 shared contract
-- experiment/navigation-600-per-feature-contract: 600 features + 600 contracts
+- experiment/navigation-500-control: 500 feature modules, no contract modules
+- experiment/navigation-500-shared-contract: 500 features + 1 shared contract
+- experiment/navigation-500-per-feature-contract: 500 features + 500 contracts
 
 ## Validation
 
-All three 600-feature layouts passed full app assembly using:
+All three 500-feature layouts passed full app assembly using:
 
 ```sh
 ./gradlew :app:assembleDebug --console=plain --max-workers=2 \
