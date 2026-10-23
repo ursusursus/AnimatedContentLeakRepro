@@ -1,0 +1,17 @@
+plugins {
+    id "groovy"
+    id "java-gradle-plugin"
+}
+
+dependencies {
+    implementation localGroovy()
+}
+
+gradlePlugin {
+    plugins {
+        libraryConventions {
+            id = "repro.library-conventions"
+            implementationClass = "com.example.buildlogic.LibraryConventionsPlugin"
+        }
+    }
+}
