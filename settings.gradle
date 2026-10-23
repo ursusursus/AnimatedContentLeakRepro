@@ -13,6 +13,13 @@ dependencyResolutionManagement {
     }
 }
 
+gradle.lifecycle.beforeProject { project ->
+    if (project.path != ":") {
+        project.apply from: project.isolated.rootProject.projectDirectory
+            .file("gradle/library-conventions.gradle")
+    }
+}
+
 rootProject.name = "AnimatedContentLeakRepro"
 include ":app"
 include ":feature:f001:contract"
