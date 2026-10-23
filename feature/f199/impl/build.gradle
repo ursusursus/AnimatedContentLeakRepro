@@ -24,8 +24,8 @@ android {
 dependencies {
     implementation project(":feature:f199:contract")
     implementation project(":feature:f200:contract")
-    implementation project(":feature:f001:contract")
-    implementation project(":feature:f002:contract")
+    implementation project(":feature:f201:contract")
+    implementation project(":feature:f202:contract")
     implementation platform(libs.androidx.compose.bom)
     implementation libs.androidx.compose.material3
     implementation libs.androidx.navigation3.ui
