@@ -1,10 +1,32 @@
 plugins {
-    id "groovy"
+    alias(libs.plugins.kotlin.jvm)
     id "java-gradle-plugin"
+    id "maven-publish"
+}
+
+group = "com.example.buildlogic"
+version = "1.0.4"
+
+repositories {
+    google()
+    mavenCentral()
+    gradlePluginPortal()
 }
 
 dependencies {
-    implementation localGroovy()
+    implementation "org.jetbrains.kotlin:kotlin-gradle-plugin:${libs.versions.kotlin.get()}"
+    implementation "com.android.tools.build:gradle:${libs.versions.agp.get()}"
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+    }
 }
 
 gradlePlugin {
