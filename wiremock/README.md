@@ -1,55 +1,19 @@
-# WireMock standalone: HTTP and WebSockets
+# WireMock standalone
 
-Pinned to [WireMock 4.0.0-beta.41](https://github.com/wiremock/wiremock/releases/tag/4.0.0-beta.41),
-the latest 4.x beta on Maven Central as of 2026-10-24. WebSockets are built in;
-no extension or separate WebSocket server is needed.
+Requires Java 17+. WireMock 4.0.0-beta.41 includes WebSocket support.
 
-## Run
-
-Requires Java 17+, Bash, curl (first download only), and sha256sum or shasum.
-From the repository root:
+From the repository root, download the JAR once and run it:
 
 ```sh
-./wiremock/run.sh
+cd wiremock
+curl -LO https://repo.maven.apache.org/maven2/org/wiremock/wiremock-standalone/4.0.0-beta.41/wiremock-standalone-4.0.0-beta.41.jar
+java -jar wiremock-standalone-4.0.0-beta.41.jar
 ```
 
-The script downloads the standalone JAR from Maven Central into the ignored
-`wiremock/.cache/` directory, verifies its SHA-256, and starts WireMock on
-`127.0.0.1:8080`. Stop with Ctrl+C. The setup runs independently of the Android app
-and Gradle build. For another port or verbose logging:
+Open `client.http` in the JetBrains HTTP Client:
 
-```sh
-PORT=9090 ./wiremock/run.sh --verbose
-```
+- `GET /hello` returns `{"message":"Hello, world!"}`.
+- `/ws/ping-pong` replies to text `ping` with text `pong`.
 
-## Try it
-
-Open [`client.http`](client.http) in IntelliJ IDEA's HTTP Client (or another
-JetBrains IDE with WebSocket HTTP Client support). Run the hello-world request,
-then the WebSocket request. The WebSocket connects, sends `ping`, and displays
-`pong` in the response pane. Send `ping` again in the same session to get another
-`pong`. Disconnect when finished. Change `@host` if you use a different port.
-
-The WebSocket syntax requires a client that supports `WEBSOCKET` requests;
-VS Code REST Client does not support this syntax.
-
-HTTP can also be tried with curl:
-
-```sh
-curl http://127.0.0.1:8080/hello
-# {"message":"Hello, world!"}
-```
-
-## How the WebSocket integration works
-
-- `mappings/hello.json` returns the hello-world JSON for `GET /hello`.
-- `mappings/websocket.json` matches `GET /ws/ping-pong` and sets
-  `openWebsocketChannel: true` to accept the WebSocket upgrade.
-- `message-mappings/ping-pong.json` matches the exact text `ping` on that path
-  and sends `pong` back to the originating connection. Other messages do not
-  match this stub and receive no application response.
-- The admin requests in `client.http` show the loaded message mappings and
-  received/sent message journal. Restart WireMock after changing mapping files.
-
-Here `ping` and `pong` are application text messages. WebSocket protocol Ping/Pong
-control frames are handled separately by the underlying server.
+WireMock loads `mappings/` and `message-mappings/` from the current directory.
+Stop with Ctrl+C; restart with the same `java -jar` command.
