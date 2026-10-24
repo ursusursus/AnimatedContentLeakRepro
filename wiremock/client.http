@@ -1,0 +1,24 @@
+# Run ./wiremock/run.sh first. WebSocket requests require the JetBrains HTTP Client.
+@host = 127.0.0.1:8080
+
+### Hello world JSON
+GET http://{{host}}/hello
+Accept: application/json
+
+> {%
+    client.test("Hello world JSON", function () {
+        client.assert(response.status === 200, "Expected HTTP 200");
+        client.assert(response.body.message === "Hello, world!", "Unexpected JSON response");
+    });
+%}
+
+### WebSocket: send the text message ping; receive the text message pong
+WEBSOCKET ws://{{host}}/ws/ping-pong
+
+ping
+
+### Inspect the loaded WebSocket message stub
+GET http://{{host}}/__admin/message-mappings
+
+### Inspect received/sent WebSocket messages after running ping/pong
+GET http://{{host}}/__admin/messages

@@ -1,0 +1,29 @@
+{
+  "name": "Reply to ping on the originating WebSocket",
+  "trigger": {
+    "type": "message",
+    "channel": {
+      "type": "websocket",
+      "initiatingRequestPattern": {
+        "method": "GET",
+        "urlPath": "/ws/ping-pong"
+      }
+    },
+    "message": {
+      "body": {
+        "equalTo": "ping"
+      }
+    }
+  },
+  "actions": [
+    {
+      "type": "send",
+      "channelTarget": {
+        "type": "originating"
+      },
+      "message": {
+        "body": "pong"
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Open ping-pong WebSocket",
+  "request": {
+    "method": "GET",
+    "urlPath": "/ws/ping-pong"
+  },
+  "response": {
+    "openWebsocketChannel": true
+  }
+}
